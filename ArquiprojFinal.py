@@ -126,19 +126,19 @@ def login_verificacao():
 
  
 def login_sucess():
-    global login_success_tela
-    login_success_tela = Toplevel(login_tela)
-    login_success_tela.title("Sucesso")
-    login_success_tela.geometry("280x250")
-    Label(login_success_tela, text="Login concluído com sucesso").pack()
+    global login_aceito_tela
+    login_aceito_tela = Toplevel(login_tela)
+    login_aceito_tela.title("Sucesso")
+    login_aceito_tela.geometry("280x250")
+    Label(login_aceito_tela, text="Login concluído com sucesso").pack()
     Main_Proj()
  
 def Main_Proj():
     
     global window
-    window = Toplevel(login_success_tela)
+    window = Toplevel(login_aceito_tela)
     window.title("Arquiproj") 
-    login_success_tela.withdraw()
+    login_aceito_tela.withdraw()
     login_tela.withdraw()
     main_tela.withdraw()
 
@@ -226,7 +226,7 @@ def Main_Proj():
         
             root_2.mainloop()
         except ValueError:
-             tkinter.messagebox.showwarning("Atenção","Por favor escolha um arquivo PDF")
+             tkinter.messagebox.showwarning("Atenção","Escolha um arquivo PDF")
              
     
     def get_selected_row(event): 
@@ -439,8 +439,8 @@ def usuario_nao_encontrado():
     Button(usuario_nao_encontrado_tela, text="OK",bg="yellow", command=delete_usuario_nao_encontrado_tela).pack()
  
 
-def delete_login_success():
-    login_success_tela.destroy()
+def delete_login_aceito():
+    login_aceito_tela.destroy()
  
  
 def delete_senha_nao_reconhecida():
